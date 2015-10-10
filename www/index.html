@@ -197,8 +197,11 @@ function startPopulate(qMode){
             el.innerHTML=inner;
             def=d2[getRandomInt(0,d2.length)];
             if (direction===1){
-                def = "<span class='englishLanguage' dir='ltr' lang='en'>"+def+"</span>";
+                var d = el.textContent;
+                d = "<span class='otherLanguage' dir='ltr' lang='ar'> = "+d[0]+"+"+d[2]+"</span>";
+                def = d+", <span class='englishLanguage' dir='ltr' lang='en'>"+def+"</span>";
             } else {
+                def = def + "=" +def[0]+"+"+def[2];
                 def = "<span class='otherLanguage' dir='ltr' lang='ar'>"+def+"</span>";
             }
             if (answer===i && answer===chosenAnswer) {
